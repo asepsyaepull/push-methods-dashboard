@@ -7,7 +7,7 @@ const Sidebar = () => {
     <aside className="w-64 bg-white border-r">
       <div className="p-6">
         <div className="flex items-center gap-2 mb-8">
-          <img alt="Logo" loading="lazy" width="180" height="150" decoding="async" data-nimg="1" className="px-2" style={{ color: 'transparent' }} src="/logo-horizontal.svg" />
+          <Image alt="Logo" loading="lazy" width="180" height="150" decoding="async" className="px-2" style={{ color: 'transparent' }} src="/logo-horizontal.svg" />
         </div>
 
         <nav className="space-y-1">
