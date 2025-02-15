@@ -8,6 +8,14 @@ interface Customer {
     registered: string;
 }
 
+interface APIUser {
+    login: { username: string };
+    name: { first: string; last: string };
+    email: string;
+    gender: string;
+    registered: { date: string };
+}
+
 const useCustomers = (search: string, selectedGender: string) => {
     const [customers, setCustomers] = useState<Customer[]>([]);
     const [loading, setLoading] = useState(true);
@@ -18,7 +26,7 @@ const useCustomers = (search: string, selectedGender: string) => {
                 const response = await fetch('https://randomuser.me/api/?results=10');
                 const data = await response.json();
 
-                const formattedCustomers = data.results.map((user: any) => ({
+                const formattedCustomers = data.results.map((user: APIUser) => ({
                     username: user.login.username,
                     name: `${user.name.first} ${user.name.last}`,
                     email: user.email,
